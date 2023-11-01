@@ -1,3 +1,11 @@
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --header-height: 4rem;
+}
+
 body {
   margin: 0;
 }
@@ -6,6 +14,21 @@ body {
 .header {
   padding: 0.5rem 1rem;
   background: lightcoral;
+  position: fixed;
+  right: 0;
+  top: 0;
+  left: 0;
+  height: var(--header-height);
+  transition: height 400ms;
+  overflow-y: hidden;
+}
+
+.main {
+  margin-top: var(--header-height);
+}
+
+.open {
+  height: 100%;
 }
 
 /* Utility classes */
@@ -18,6 +41,9 @@ body {
 }
 .flex {
   display: flex;
+}
+.col {
+  flex-direction: column;
 }
 .justify-center {
   justify-content: center;
